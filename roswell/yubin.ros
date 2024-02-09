@@ -17,5 +17,5 @@ exec ros -Q -- $0 "$@"
       (format t ":~&~A~%" (yubin:get-place zipcode))
     (error (e)
       (format *standard-output* "~&Error: ~A~%" e)
-      uiop:quit -1)))
+      (uiop:quit -1))))
 
