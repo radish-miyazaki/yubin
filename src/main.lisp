@@ -8,7 +8,7 @@
   (let* ((url (quri:make-uri :defaults "http://zipcloud.ibsnet.co.jp/api/search"
                              :query `(("zipcode" . ,zipcode))))
          (response (parse (dex:get url)))
-         (result (first (getf response :|result|))))
+         (result (first (getf response :|results|))))
     (if result
         (concatenate 'string
                      (getf result :|address1|)
@@ -18,5 +18,4 @@
                        (getf response :|message|)
                        zipcode
                        (getf response :|status|))))))
-
 
