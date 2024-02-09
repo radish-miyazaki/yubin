@@ -14,7 +14,7 @@ exec ros -Q -- $0 "$@"
 (defun main (zipcode &rest argv)
   (declare (ignorable argv))
   (handler-case
-      (format t ":~&~A~%" (yubin:get-place zipcode))
+      (format t "~&~A~%" (yubin:get-place zipcode))
     (error (e)
       (format *standard-output* "~&Error: ~A~%" e)
       (uiop:quit -1))))
